@@ -48,9 +48,20 @@ $Resultado=False;
            echo '</td>
            <td>'.$Registro["FechaNacimiento"].'</td>
            <td><a href="ActualizacionEstudiantes.php?CodigoEstudiante='.$Registro["CodigoEstudiante"].'">Editar</td>
-           <td><a href="Estudiantes.php?CodigoEstudiante='.$Registro["CodigoEstudiante"].'">Eliminar</a></td>
+           <td><a href="#" onclick="Preguntar('.$Registro ["CodigoEstudiante"].')">Eliminar</a></td>
        </tr>'; 
     } // Fin del ciclo del listado de proyectos
     echo '</table>';
  }
+
 ?>
+
+<script type="text/javascript">
+   function Preguntar(CodigoEstudiante)
+   {
+      if (confirm("¿Está seguro de eliminar el estudiante? con codigo"+CodigoEstudiante+"?"))
+      {
+         window.location.href = "Estudiantes.php? CodigoEstudiante="+CodigoEstudiante;
+      }
+   }
+</script>

@@ -33,14 +33,21 @@ $Resultado=False;
            <td>'.$Registro["NombreProyecto"].'</td>
            <td>'.$Registro["Resumen"].'</td>
            <td>'.$Registro["FechaRegistro"].'</td>
-           <td>Editar</td>
-           <td>Eliminar</td>
+           <td><a href="ActualizacionProyectos.php?CodigoProyecto='.$Registro["CodigoProyecto"].'">Editar</td>
+           <td><a href="#" onclick="Preguntar('.$Registro ["CodigoProyecto"].')">Eliminar</a></td>
        </tr>'; 
     } // Fin del ciclo del listado de proyectos
     echo '</table>';
  }
 
-
-
-
 ?>
+
+<script type="text/javascript">
+   function Preguntar(CodigoProyecto)
+   {
+      if (confirm("¿Está seguro de eliminar el proyecto? con codigo"+CodigoProyecto+"?"))
+      {
+         window.location.href = "Proyectos.php? CodigoProyecto="+CodigoProyecto;
+      }
+   }
+</script>

@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Especialidad</title>
-</head>
-<body>
-    <h1>Registro de Especialidad</h1>
-    <?php Include("../controlador/RegistrarEspecialidad.php");?>
+<?php
+    include("navegacion.php");
+    echo "<h1>REGISTRAR ESPECIALIDADES</h1>";
+     Include("../controlador/RegistrarEspecialidad.php");
+    echo'
+    
     <form action="RegistroEspecialidades.php" method="post">
         <label for="CodigoEspecialidad">Codigo de Especialidad</label>
         <input type="number"name="CodigoEspecialidad"id="CodigoEspecialidad"><br>
         <label for="NombreEspecialidad">Nombre de la Especialidad:</label>
         <input type="text"name="NombreEspecialidad"id="NombreEspecialidad"><br>
         <button type="submit">Registrar Especialidad</button>
-    </form>
-</body>
-</html>
+    </form>';
+    include("Footer.php");

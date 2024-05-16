@@ -29,10 +29,19 @@ $Resultado=False;
        <tr>
            <td>'.$Registro["CodigoEspecialidad"].'</td>
            <td>'.$Registro["NombreEspecialidad"].'</td>
-           <td>Editar</td>
-           <td>Eliminar</td>
+           <td><a href="ActualizacionEspecialidades.php?CodigoEspecialidad='.$Registro["CodigoEspecialidad"].'">Editar</td>
+           <td><a href="#" onclick="Preguntar('.$Registro ["CodigoEspecialidad"].')">Eliminar</a></td>
        </tr>'; 
     } // Fin del ciclo del listado de proyectos
     echo '</table>';
  }
 ?>
+<script type="text/javascript">
+   function Preguntar(CodigoEspecialidad)
+   {
+      if (confirm("¿Está seguro de eliminar la especialidad? con codigo"+CodigoEspecialidad+"?"))
+      {
+         window.location.href = "Especialidades.php?CodigoEspecialidad="+CodigoEspecialidad;
+      }
+   }
+</script>
